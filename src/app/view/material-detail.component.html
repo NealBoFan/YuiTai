@@ -1,0 +1,40 @@
+<div *ngIf="material">
+      <div class="panel panel-default">
+        <div class="panel-heading">{{material.name}}</div>
+        <div class="panel-body">
+        
+        
+      <table class="table">
+          <tr>
+             <th>長(L)</th>
+             <th>寬(W)</th>
+             <th>厚(T)</th>
+             <th>數量</th>
+             <th>價格/kg</th>
+          </tr>  
+
+            <tr>
+              <td><div class="input-group input-group-lg"><input type="text" class="form-control" [(ngModel)]="material.l" (ngModelChange)="material.getTotal()" placeholder="長"><span class="input-group-addon" >mm</span></div></td>
+              <td><div class="input-group input-group-lg"><input type="text" class="form-control" [(ngModel)]="material.w" (ngModelChange)="material.getTotal()" placeholder="寬"><span class="input-group-addon" >mm</span></div></td>
+              <td><div class="input-group input-group-lg"><input type="text" class="form-control" [(ngModel)]="material.t" (ngModelChange)="material.getTotal()" placeholder="厚"><span class="input-group-addon" >mm</span></div></td>
+              <td><div class="input-group input-group-lg"><input type="text" class="form-control" [(ngModel)]="material.q" (ngModelChange)="material.getTotal()" placeholder="數量"><span class="input-group-addon" >個</span></div></td>
+              <td><div class="input-group input-group-lg"><input type="text" class="form-control" [(ngModel)]="material.price" (ngModelChange)="material.getTotal()" placeholder="price"><span class="input-group-addon" >元</span></div></td>
+            </tr>
+            <tr>
+             <th></th>
+             <th></th>
+             <th></th>
+             <th>重量(kg)</th>
+             <th>總額</th>
+          </tr> 
+          <tr>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td><div *ngIf="material.kg">{{material.kg}}kg</div></td>
+             <td><div *ngIf="material.total">{{material.total}}元</div></td>
+          </tr> 
+        </table>
+        </div>
+      </div>
+</div>

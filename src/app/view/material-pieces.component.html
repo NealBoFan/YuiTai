@@ -1,0 +1,12 @@
+<div class="row">
+  <h2>常用原料計算</h2>
+    <div class="col-md-3">
+      <ul class="materials">
+        <li *ngFor="let material of Materials" [class.selected]="material === selectedMaterial"
+          (click)="onSelect(material)">
+          <span class="badge">{{material.id}}</span> {{material.name}}
+        </li>
+      </ul>
+  </div>  
+  <div class="col-md-7"><material-detail [material]="selectedMaterial"></material-detail></div>
+</div>
